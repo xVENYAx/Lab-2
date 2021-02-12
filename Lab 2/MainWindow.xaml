@@ -5,26 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab_2"
         mc:Ignorable="d"
-        Title="Greetings" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Height="130">
+        Title="Greetings" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Height="259" Width="513">
 
-    <StackPanel Orientation="Vertical" Width="289">
-        <StackPanel Orientation="Horizontal" Margin="10">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="73*"/>
+            <RowDefinition Height="73*"/>
+            <RowDefinition Height="73*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="74*"/>
+            <ColumnDefinition Width="73*"/>
+            
+        </Grid.ColumnDefinitions>
 
-            <Label Content="Введіть своє ім'я:" FontStyle="Italic" HorizontalAlignment="Right" />
-            <TextBox Width="100" Height="20" Margin="31,-5" Name="txtName" />
+        <Label Content="Введіть своє ім'я:" FontStyle="Italic" HorizontalAlignment="Right" Margin="0,24,28,0" VerticalAlignment="Top" Height="35" Width="166" FontSize="20" HorizontalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Margin="16,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Height="35" FontSize="20" HorizontalContentAlignment="Center" Grid.Column="1" Grid.ColumnSpan="2" Name="txtName"/>
 
-        </StackPanel>
+        <Label Content="Введіть назву групи:" FontStyle="Italic" Margin="0,15,6,0" VerticalAlignment="Top" Height="44" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Grid.Row="1" HorizontalAlignment="Right" Width="206"/>
+        <TextBox Name="Name" HorizontalAlignment="Left" Margin="16,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontSize="20" Height="36" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-        <StackPanel Orientation="Horizontal" Margin="10,-10">
 
-            <Label Content="Введіть назву групи:" FontStyle="Italic" HorizontalAlignment="Right" />
-            <TextBox Width="100" Height="20" Margin="13,0" Name="Name" />
 
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="80,30">
-            <Button Name="btnOK" IsDefault="True" Content="OK" Margin="0,0,20,0" Width="50" Click="btnOK_Click" />
-            <Button Name="btnCancel" IsCancel="True" Content="Cancel" Width="50" Click="btnCancel_Click" />
-        </StackPanel>
+        <Button Name="btnOK" IsDefault="True" FontStyle="Italic" VerticalAlignment="Top" Content="OK" Margin="8,10,0,16" Width="100" Height="50" Click="btnOK_Click" Grid.Row="2" Grid.Column="0"/>
+        <Button Name="btnCancel" IsCancel="True" FontStyle="Italic" Content="Cancel" VerticalAlignment="Top" Width="100" Height="50" Margin="20,9,0,16" Click="btnCancel_Click" Grid.Row="2" Grid.Column="1"/>
 
-    </StackPanel>
+
+
+    </Grid>
 </Window>
