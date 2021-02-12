@@ -25,43 +25,60 @@ namespace Ex_3
             InitializeComponent();
         }
 
-        private void btnOrder_Click(object sender, RoutedEventArgs e)
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
 
             // get the name of the drink
-            string DrinkName = txtDrink.Text;
-
-            // if no drink ordered, display message
-            if (DrinkName.Length == 0)
+            string login = txtLog.Text;
+            string password = txtPass.Password;
+            if (login.Length <= 1)
             {
-                MessageBox.Show("No drink ordered");
-                txtDrink.Focus();
-                return;
+                log_nope.Visibility = Visibility.Visible;
+                log_ok.Visibility = Visibility.Hidden;
+                MessageBox.Show("ENTER LOGIN!");
+
+
             }
-
-            // how many sugars
-            int Sugars;
-
-            // try converting input sugars to integer
-            try
+            else if (password.Length <= 1)
             {
-                Sugars = Convert.ToInt32(txtSugars.Text);
-            }
-            catch
-            {
-                Sugars = -1;
-            }
+                pass_nope.Visibility = Visibility.Visible;
+                pass_ok.Visibility = Visibility.Hidden;
+                MessageBox.Show("ENTER PASSWORD!");
 
-            // if no sugars ordered, display message
-            if (Sugars == -1)
-            {
-                MessageBox.Show("You haven't ordered any sugars");
-                txtSugars.Focus();
-                return;
-            }
 
-            // finally, display order
-            MessageBox.Show("You have ordered a " + DrinkName.ToUpper() + " with " + Sugars.ToString() + " sugars", "Order confirmation");
+            }
+            else
+            {
+                if (login == "admin")
+                {
+                    log_nope.Visibility = Visibility.Hidden;
+                    log_ok.Visibility = Visibility.Visible;
+                    if (password == "admin")
+                    {
+                        pass_nope.Visibility = Visibility.Hidden;
+                        pass_ok.Visibility = Visibility.Visible;
+
+                        MessageBox.Show("HELLO MY ADMIN! ");
+
+                    }
+                    else
+                    {
+                        pass_nope.Visibility = Visibility.Visible;
+                        pass_ok.Visibility = Visibility.Hidden;
+
+                        MessageBox.Show("Wrong Password! Try again! ", "Error");
+                    }
+                }
+                else
+                {
+                    log_nope.Visibility = Visibility.Visible;
+                    log_ok.Visibility = Visibility.Hidden;
+
+                    MessageBox.Show("Wrong Login! Try again! ", "Error");
+                    
+
+                }
+            }
         }
     }
 }

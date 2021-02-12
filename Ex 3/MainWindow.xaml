@@ -5,8 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ex_3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Some Site" SizeToContent="WidthAndHeight" 
+        WindowStartupLocation="CenterScreen">
 
-    </Grid>
+    <StackPanel Orientation="Vertical" Background="#FFECF7F7">
+        <Grid HorizontalAlignment="Stretch" Margin="40" Background="#FFFC6A6A">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition MinWidth="70" />
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+
+            <!-- the title spans 2 columns at top -->
+            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" 
+                Background="#FFA8A8C8" BorderBrush="Black" BorderThickness="1" Content="Sing In" FontWeight="Bold"
+                HorizontalContentAlignment="Center" />
+
+            <!-- the form labels -->
+            <Label Grid.Row="2" Grid.Column="0" Content="Login:" HorizontalContentAlignment="Right" FontStyle="Italic" />
+            <Label Grid.Row="3" Grid.Column="0" Content="Password:" HorizontalContentAlignment="Right" FontStyle="Italic" />
+
+            <!-- the text boxes for the form -->
+            <TextBox Name="txtLog" Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="1"  HorizontalAlignment="Stretch" Margin="5" />
+            <PasswordBox Name="txtPass" Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="1"  HorizontalAlignment="Stretch" Margin="5" />
+            <Image Name="log_ok" Source="Res/ok.jpg" Height="25" Width="25" Grid.Row="2" Grid.Column="3" Visibility="Hidden"/>
+            <Image Name="log_nope" Source="Res/no.png" Height="25" Width="25" Grid.Row="2" Grid.Column="3" Visibility="Hidden"/>
+            <Image Name="pass_ok" Source="Res/ok.jpg" Height="25" Width="25" Grid.Row="3" Grid.Column="4" Visibility="Hidden"/>
+            <Image Name="pass_nope" Source="Res/no.png" Height="25" Width="25" Grid.Row="3" Grid.Column="4" Visibility="Hidden"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20,0,0,20">
+            <Button x:Name="btnLogin" HorizontalContentAlignment="Center" Content="Log in" Click="btnLogin_Click" />
+
+
+        </StackPanel>
+    </StackPanel>
+
+
+
 </Window>

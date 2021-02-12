@@ -40,11 +40,26 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20,0,0,20">
-            <Button Name="btnPow" Margin="0,0,20,0" Content="a^b" Width="30" Click="btnOperator" Background="#FFFC6060" />
-            <Button Name="btnAtan2" Margin="0,0,20,0" Content="Atan2" Width="30" Click="btnOperator" Background="#FFE85C5C" />
-            <Button Name="btnKor" Margin="0,0,20,0" Content="√" Width="30" Click="btnOperator" Background="#FFEA6565" />
-            <Button Name="btnLog" Margin="0,0,20,0" Content="Log" Width="30" Click="btnOperator" Background="#FFED6868" />
+            <Button Name="btnPow" Margin="0,0,20,0" Content="aᵇ" Width="30" Click="btnOperator" Background="#FFFC6060" />
+            <Button Name="btnAtan" Margin="0,0,20,0" Content="Atan" Width="30" Click="btnOperator" Background="#FFE85C5C" />
+            <Button Name="btnKor" Margin="0,0,20,0" Width="30" Click="btnOperator" Background="#FFEA6565" >
+            <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="a" FontSize="8" VerticalAlignment="Top" Margin="-1,-1,-2, 0" />
+                    <TextBlock Text="√" />
+                    <TextBlock Text="__" FontSize="8" VerticalAlignment="Top" Margin="-1.9,-5.5,-2, 0" HorizontalAlignment="Left"/>
+                    <TextBlock Text="b" FontSize="8" VerticalAlignment="Top" Margin="-4,3,-2, 0" HorizontalAlignment="Left"/>
+            </StackPanel>
+            </Button>
+            <Button Name="btnlog"  Width="39" Click="btnOperator" Background="#FFEA6565">
+                <StackPanel Orientation="Horizontal">
+                    
+                    <TextBlock Text="log" />
+                    <TextBlock Text="a" FontSize="8" VerticalAlignment="Bottom" Margin="0,0,0,-2"/>
+                    <TextBlock Text="b" />
+                </StackPanel>
+            </Button>
         </StackPanel>
+        
 
         <Label Content="Hidden initially" Width="200" Height="30" Background="Lavender" BorderBrush="Black" BorderThickness="1"
                FontWeight="Bold" Foreground="Red"

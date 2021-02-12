@@ -60,7 +60,7 @@ namespace Ex_2
                 case "pow":
                     answer = Math.Pow(n1, n2);
                     break;
-                case "atan2":
+                case "atan":
                     answer = Math.Atan2(n1, n2);
                     break;
                 case "kor":
